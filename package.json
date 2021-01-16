@@ -1,0 +1,13 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "discord.js": "^12.5.1",
+    "mineflayer": "^2.40.1",
+    "needle": "^2.6.0",
+    "prismarine-viewer": "^1.13.1"
+  }
+}
