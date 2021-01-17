@@ -1,0 +1,15 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "mineflayer": "^2.40.1",
+    "mineflayer-auto-eat": "^1.3.4",
+    "needle": "^2.6.0",
+    "prismarine-viewer": "^1.13.1"
+  }
+}
