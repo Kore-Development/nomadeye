@@ -1,3 +1,4 @@
 .env
 *.bat
+ngrok.exe
 node_modules/
