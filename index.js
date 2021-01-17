@@ -7,6 +7,9 @@
 // in-game messages sent to discord
 // discord messages in mc chat channel sent to minecraft
 
+// To Do:
+// performance monitoring like on https://analytics.switchcraft.pw/d/000000001/switchcraft-overview?orgId=1
+
 // reading .env files which contains the token and stuff
 require('dotenv').config();
 const needle = require("needle"); // used for reading web pages
@@ -88,7 +91,6 @@ client.on('ready', () => {
 
 	// Get channels
 	channel = client.channels.cache.get(channel);
-	alertsChannel = client.channels.cache.get(alertsChannel);
 	trustedChat = client.channels.cache.get(trustedChat);
 
 	if (!channel) {
@@ -158,6 +160,7 @@ async function goToSleep() {
 
 	// Detect if bed is valid
 	if (bed) {
+		bot.setControlState("sneak", false);
 		// Try sleeping
 		try {
 			await bot.sleep(bed)
@@ -165,6 +168,7 @@ async function goToSleep() {
 		} catch (err) {
 			bot.chat(`I can't sleep: ${err.message}`);
 		}
+		bot.setControlState("sneak", true);
 	} else {
 		// If no bed is found
 		bot.chat('No nearby bed');
